@@ -1,0 +1,84 @@
+name: Music Generator
+
+version: 1.0
+
+description: A music generator that can generate music in different styles, genres, moods, instruments, and time signatures.
+
+author: Jish123K
+
+inputs:
+
+  - style:
+
+    description: The style of music to generate.
+
+    type: string
+
+    required: true
+
+  - genre:
+
+    description: The genre of music to generate.
+
+    type: string
+
+    required: true
+
+  - mood:
+
+    description: The mood of music to generate.
+
+    type: string
+
+    required: true
+
+  - instrument:
+
+    description: The instrument to generate the music with.
+
+    type: string
+
+    required: true
+
+  - time_signature:
+
+    description: The time signature of the music to generate.
+
+    type: string
+
+    required: true
+
+outputs:
+
+  - music:
+
+    description: The generated music.
+
+    type: bytes
+
+    required: true
+
+steps:
+
+  - generate_music:
+
+    description: Generates music based on the input parameters.
+
+    command: python3 generate_music.py
+
+    inputs:
+
+      - style
+
+      - genre
+
+      - mood
+
+      - instrument
+
+      - time_signature
+
+    outputs:
+
+      - music
+
